@@ -5,7 +5,7 @@ let h1 = document.querySelector("h1").textContent = "Fruits & Vegetables Corp";
 let a = document.querySelector("ul li:last-child a");
 
 // Changing href
-a.href = "#Vegetables";
+a.href = "#vegetables";
 // Changing textContent
 a.textContent = "Vegetables";
 // Changing order on the sections
@@ -45,18 +45,32 @@ let text = document.getElementById("about").childNodes[1],
   p.appendChild(text);
   about.insertBefore(p, about.childNodes[1]);
 
+// replacing td tags for th tags
+
+let thead = document.querySelector("thead tr");
+
+let td1 = thead.getElementsByTagName("td")[0],
+    td2 = thead.getElementsByTagName("td")[1];
 
 
+let th = document.createElement("th"),
+    th1 = document.createElement("th");
+th.innerHTML = td1.innerHTML;
+th1.innerHTML = td2.innerHTML;
+
+td1.parentNode.appendChild(th);
+td1.parentNode.removeChild(td1);
+
+td2.parentNode.appendChild(th1);
+td2.parentNode.removeChild(td2);
+
+// chaging head title
+let title = document.querySelector("title").innerHTML = "Fruits & Vegetables Corp";
 
 
-
-
-
-
-/*
 let css = document.createElement("link");
 
 css.rel = "stylesheet";
+css.type = "text/css";
 css.href = "main.css";
 document.head.appendChild(css);
-*/
